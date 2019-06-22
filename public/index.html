@@ -11,25 +11,31 @@
 <body>
     <div class="container">
         <div id="left-nav">
-            <div class="navbar-item ">
+            <div class="navbar-item">
                <a href="index.html" class="logo"> LOGO </a>
             </div>
-            <div class="navbar-item navbar-active">
+            <div class="navbar-item">
                 <i class='fas fa-home'></i>
+                <div>Anasayfa</div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-check-square"></i>
+                <div>Gorev List</div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-award"></i>
+                <div>Award</div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-user-circle"></i>
+                <div>Profile</div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-sign-out-alt"></i>
+                <div>Sign out</div>
             </div>
         </div>
+        hi guys
     </div>
     <!-- Import JQuery-->
     <script src="jquery.js"></script>
@@ -42,11 +48,18 @@
         // Add navbar-active class on clicked navbar item
         function toggleActive(e){
             let hasClass = $(this).hasClass('navbar-active');
+            if($(this).parent().hasClass('navbar-item'))
+            {
+                return false;
+            }
             if (!hasClass) {
                 $('.navbar-item').each(function (i) {
                     $(this).removeClass('navbar-active');
                 })
                 $(this).addClass('navbar-active');
+            }else{
+                
+                $(this).removeClass('navbar-active');
             }
         }
     </script>

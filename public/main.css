@@ -1,3 +1,8 @@
+:root{
+    --left-navbar-width: 60px;
+    --left-navbar-bg: #252434;
+}
+
 *{
     margin:0;
     padding:0;
@@ -10,13 +15,13 @@
 .container{
     height: 100vh;
     display: grid;
-    grid-template-columns: 60px auto;
+    grid-template-columns: var(--left-navbar-width) auto;
 }
 #left-nav{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #252434;
+    background-color: var(--left-navbar-bg);
 }
 .navbar-item{
     height: 50px;
@@ -29,4 +34,24 @@
 }
 .navbar-active{
     color: #3B9478;
+}
+.navbar-item div{
+    display: none;
+}
+.navbar-item i{
+    pointer-events: none;
+}
+
+.navbar-active div{
+    display: flex;
+    position: absolute;
+    left: 59px;
+    top:0; 
+    height: 100vh;
+    width: 300px;
+    background-color: var(--left-navbar-bg);
+    cursor: default;
+    flex-direction: column;
+    align-items: center;
+
 }
