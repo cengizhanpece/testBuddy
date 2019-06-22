@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Import FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div id="left-nav">
+            <div class="navbar-item ">
+               <a href="index.html" class="logo"> LOGO </a>
+            </div>
+            <div class="navbar-item navbar-active">
+                <i class='fas fa-home'></i>
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-check-square"></i>
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-award"></i>
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Import JQuery-->
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(()=>{
+            // Event Listeners
+            $('.navbar-item').bind('click', toggleActive);
+        });
+
+        // Add navbar-active class on clicked navbar item
+        function toggleActive(e){
+            let hasClass = $(this).hasClass('navbar-active');
+            if (!hasClass) {
+                $('.navbar-item').each(function (i) {
+                    $(this).removeClass('navbar-active');
+                })
+                $(this).addClass('navbar-active');
+            }
+        }
+    </script>
+</body>
+</html>

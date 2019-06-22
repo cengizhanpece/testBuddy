@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.logo{
+    color: #3B9478;
+    text-decoration: none;
+}
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 60px auto;
+}
+#left-nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #252434;
+}
+.navbar-item{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    font-size: 20px;
+    color:white;
+}
+.navbar-active{
+    color: #3B9478;
+}
