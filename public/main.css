@@ -33,9 +33,6 @@
     font-size: 20px;
     color:white;
 }
-.navbar-active{
-    color: var(--primary-active-color);
-}
 .navbar-active i{
     display: flex;
     align-items: center;
@@ -43,6 +40,7 @@
     position: relative;
     height: 50px;
     width: 100%;
+    color: var(--primary-active-color);
 }
 .navbar-active i::after{
     content: '';
@@ -60,6 +58,7 @@
 }
 
 .navbar-active .navbar-content{
+    font-size:16px;
     display: flex;
     position: absolute;
     left: 59px;
