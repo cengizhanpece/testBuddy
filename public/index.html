@@ -12,7 +12,13 @@
 <body>
     <!-- Messages Start-->
     <div class="messages-overlay"></div>
-    <div class="incoming-messages"></div>
+    <div class="incoming-messages">
+        <div class="incoming-messages-header">
+                <i class="fas fa-times messages-close"></i>
+                <h1 class="incoming-messages-title">Gelen Kutusu</h1>
+        </div>
+        
+    </div>
     <!-- Messages End-->
     <!-- Container Start-->
     <div class="container">
@@ -22,7 +28,7 @@
                <a href="index.html" class="logo"> LOGO </a>
             </div>
             <div class="navbar-item">
-                <i class='fas fa-home'></i>
+                <i class='fas fa-home navbar-icon'></i>
                 <div class="navbar-content" id="home">
                     <div class="parent-incoming-message">
                         <div class="incoming-message-button">Gelen Kutusu</div>
@@ -33,19 +39,19 @@
                 </div>
             </div>
             <div class="navbar-item">
-                <i class="fas fa-check-square"></i>
+                <i class="fas fa-check-square navbar-icon"></i>
                 <div class="navbar-content">Gorev List</div>
             </div>
             <div class="navbar-item">
-                <i class="fas fa-award"></i>
+                <i class="fas fa-award navbar-icon"></i>
                 <div class="navbar-content">Award</div>
             </div>
             <div class="navbar-item">
-                <i class="fas fa-user-circle"></i>
+                <i class="fas fa-user-circle navbar-icon"></i>
                 <div class="navbar-content">Profile</div>
             </div>
             <div class="navbar-item">
-                <i class="fas fa-sign-out-alt"></i>
+                <i class="fas fa-sign-out-alt navbar-icon"></i>
                 <div class="navbar-content">Sign out</div>
             </div>
         </div>
@@ -61,6 +67,7 @@
             $('.navbar-item').bind('click', toggleActive);
             $('.incoming-message-button').bind('click', showMessages);
             $('.messages-overlay').bind('click', closeMessages);
+            $('.messages-close').bind('click', closeMessages);
         });
 
         // Add navbar-active class on clicked navbar item
@@ -81,11 +88,12 @@
                 
             }
         }
-        //show incoming message
+        //show incoming message modal
         function showMessages(e){
             $('.messages-overlay').css("display","block");
-            $('.incoming-messages').css("display","block");
+            $('.incoming-messages').css("display","flex");
         }
+        //close incoming message modal
         function closeMessages(e){
             $('.messages-overlay').css("display", "none");
              $('.incoming-messages').css("display", "none");
