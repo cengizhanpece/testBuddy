@@ -1,23 +1,9 @@
-:root{
-    --left-navbar-width: 60px;
-    --left-navbar-bg: #252434;
-    --primary-active-color: #3B9478;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
+/* NavBar General */
 .logo{
     color: var(--primary-active-color);
     text-decoration: none;
 }
-.container{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: var(--left-navbar-width) auto;
-}
+
 #left-nav{
     display: flex;
     flex-direction: column;
@@ -68,13 +54,53 @@
     background-color: var(--left-navbar-bg);
     cursor: default;
     flex-direction: column;
-    align-items: center;
+    padding-left: 15px;
+    padding-top: 15px;
     -webkit-animation-name: navbar-animate; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 0.3s; /* Safari 4.0 - 8.0 */
     animation-name: navbar-animate;
     animation-duration: 0.3s;
 
 }
+
+/* NavBar Homepage  Incoming Message */
+
+.incoming-message-button{
+    display: inline-block;
+    padding: 15px 10px;
+    background-color: var(--primary-active-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+.messages-overlay {
+    z-index: 20;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.incoming-messages{
+    display:none;
+    z-index: 21;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+}
+
+
+.left-navbar-username {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* KeyFrames */
 
 @keyframes navbar-animate{
     from{

@@ -1,0 +1,16 @@
+:root{
+    --left-navbar-width: 60px;
+    --left-navbar-bg: #252434;
+    --primary-active-color: #3B9478;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: var(--left-navbar-width) auto;
+}
+
