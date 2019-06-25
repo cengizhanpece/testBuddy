@@ -19,7 +19,7 @@
     font-size: 20px;
     color:white;
 }
-.navbar-active i{
+.navbar-active .navbar-icon{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@
     width: 100%;
     color: var(--primary-active-color);
 }
-.navbar-active i::after{
+.navbar-active .navbar-icon::after{
     content: '';
     position: absolute;
     left: 0px;
@@ -39,7 +39,7 @@
 .navbar-item .navbar-content{
     display: none;
 }
-.navbar-item i{
+.navbar-active .navbar-icon{
     pointer-events: none;
 }
 
@@ -63,7 +63,7 @@
 
 }
 
-/* NavBar Homepage  Incoming Message */
+/* NavBar Homepage  Incoming Message Modal */
 
 .incoming-message-button{
     display: inline-block;
@@ -71,6 +71,10 @@
     background-color: var(--primary-active-color);
     cursor: pointer;
     user-select: none;
+}
+
+.incoming-messages-title{
+    margin:10px;
 }
 
 .messages-overlay {
@@ -91,15 +95,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: white;
+    background-color: #fafafa;
+    flex-direction: column;
 }
-
 
 .left-navbar-username {
     margin-top: 20px;
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.messages-close{
+    position: absolute;
+    font-size: 1.3rem;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+}
+
 /* KeyFrames */
 
 @keyframes navbar-animate{
