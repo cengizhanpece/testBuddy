@@ -17,7 +17,36 @@
                 <i class="fas fa-times messages-close"></i>
                 <h1 class="incoming-messages-title">Gelen Kutusu</h1>
         </div>
-        
+        <div class="incoming-messages-container">
+            <div class="message">
+                <i class="fas fa-times message-delete"></i>
+                <div class="message-title">
+                    Hey you have a Message!!
+                </div>
+                <div class="message-text">
+                    and this is your message!
+                </div>
+            </div>
+
+            <div class="message">
+                <i class="fas fa-times message-delete"></i>
+                <div class="message-title">
+                    Hey you have a Message!!
+                </div>
+                <div class="message-text">
+                    and this is your message!
+                </div>
+            </div>
+            <div class="message">
+                <i class="fas fa-times message-delete"></i>
+                <div class="message-title">
+                    Hey you have a Message!!
+                </div>
+                <div class="message-text">
+                    and this is your message!
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Messages End-->
     <!-- Container Start-->
@@ -35,7 +64,14 @@
                     </div>
                         
                         <div class="left-navbar-username">Cengiz Han Peçe</div>
-                        <div class="left-navbar-last-actions"></div>
+                        <!-- Homepage Last Actions -->
+                        <div class="left-navbar-last-actions">
+                          <div class="last-action-header">Action Head</div>
+                            <div class="last-actions-card">
+                                <div class="fas fa-check-square"></div>
+                                <div class="notifications-text">Lorem ipsum dolor sit falan filan</div>
+                            </div>
+                        </div>
                 </div>
             </div>
             <div class="navbar-item">
@@ -68,6 +104,7 @@
             $('.incoming-message-button').bind('click', showMessages);
             $('.messages-overlay').bind('click', closeMessages);
             $('.messages-close').bind('click', closeMessages);
+            $('.message-delete').bind('click',deleteMessage);
         });
 
         // Add navbar-active class on clicked navbar item
@@ -97,6 +134,9 @@
         function closeMessages(e){
             $('.messages-overlay').css("display", "none");
              $('.incoming-messages').css("display", "none");
+        }
+        function deleteMessage(e){
+            $(this).parent().remove();
         }
     </script>
 </body>

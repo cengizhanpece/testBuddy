@@ -2,7 +2,9 @@
     --left-navbar-width: 60px;
     --left-navbar-bg: #252434;
     --primary-active-color: #3B9478;
+    --left-navbar-active-bg: #2D2B41;
 }
+
 *{
     margin:0;
     padding:0;
@@ -13,4 +15,3 @@
     display: grid;
     grid-template-columns: var(--left-navbar-width) auto;
 }
-
