@@ -1,1 +1,25 @@
--- Action header küçültülüp mesaja yakınlaştırılacak.
+-- Tasklar düzenlenebilir olacak
+
+
+---- Sayfa Yenilenmeden form gönderme örneği ---
+$(function () {
+    $('#myFormName').on('submit',function (e) {
+
+              $.ajax({
+                type: 'post',
+                url: 'myPageName.php',
+                data: $('#myFormName').serialize(),
+                success: function () {
+                 alert("Email has been sent!");
+                }
+              });
+          e.preventDefault();
+        });
+});
+-------------------------------------------------
+
+
+
+-- Gelen kutusu renkleri yeni görev ekledeki gibi olacak
+-- Sayfanın dili ingilzice olacak
+-- yeni görev ekle tamamlancak

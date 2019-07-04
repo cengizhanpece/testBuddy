@@ -2,9 +2,16 @@
     --left-navbar-width: 60px;
     --left-navbar-bg: #252434;
     --primary-active-color: #3B9478;
+    --primary-active-hover-color: rgb(59, 172, 136);
     --left-navbar-active-bg: #2D2B41;
+    --primary-card-color: #39374D;
+    --primary-red-color: rgba(255, 0, 0, 0.74);
 }
 
+html{
+    background-color: var(--left-navbar-bg);
+    color:white;
+}
 *{
     margin:0;
     padding:0;

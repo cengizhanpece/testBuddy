@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Import FontAwesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/leftNavBar.css">
 </head>
 <body>
+    <!-- ALL MODALS START-->
+    <div class="modal-overlay"></div>
     <!-- Messages Start-->
-    <div class="messages-overlay"></div>
     <div class="incoming-messages">
         <div class="incoming-messages-header">
                 <i class="fas fa-times messages-close"></i>
@@ -49,6 +51,26 @@
         </div>
     </div>
     <!-- Messages End-->
+    <!-- New Task Modal Start-->
+    <div class="new-task-modal-container">
+        <div class="new-task-modal-header">
+            <i class="fas fa-times messages-close"></i>
+            <h1 class="new-task-modal-title">
+                Create New Task
+            </h1>
+        </div>
+        <div class="new-task-modal-form-container">
+            <div class="new-task-modal-form-field">
+                <div class="new-task-modal-form-field-name">Task Name: </div>
+                <div class="new-task-modal-form-field-input">
+                    <input type="text" placeholder="Task Name" />
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- New Task Modal End-->
+    <!-- ALL MODALS END-->
     <!-- Container Start-->
     <div class="container">
         <!-- Left Nav Bar Start-->
@@ -58,6 +80,7 @@
             </div>
             <div class="navbar-item">
                 <i class='fas fa-home navbar-icon'></i>
+                <!-- HOMEPAGE -->
                 <div class="navbar-content" id="home">
                     <div class="parent-incoming-message">
                         <div class="incoming-message-button">Gelen Kutusu</div>
@@ -66,17 +89,30 @@
                         <div class="left-navbar-username">Cengiz Han Peçe</div>
                         <!-- Homepage Last Actions -->
                         <div class="left-navbar-last-actions">
-                          <div class="last-action-header">Action Head</div>
+                          
                             <div class="last-actions-card">
                                 <div class="fas fa-check-square"></div>
-                                <div class="notifications-text">Lorem ipsum dolor sit falan filan</div>
+                                <div class="action-text">
+                                    <div class="last-action-header">Action Head</div>
+                                    <div class="last-action-content">Lorem ipsum dolor sit falan filan</div>
+                                </div>
                             </div>
                         </div>
                 </div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-check-square navbar-icon"></i>
-                <div class="navbar-content">Gorev List</div>
+                <div class="navbar-content"><div class="fas fa-plus new-task-btn"><div style="font-size:25px;padding-left:10px;">Yeni Görev Ekle</div></div>
+                    <div class="task-card">
+                        <div class="task-header">Görev Başlık</div>
+                        <div class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus facere a dolores nemo natus amet, earum numquam quisquam architecto pariatur, at placeat. Dolore ipsam incidunt asperiores cumque? Voluptatum, eveniet commodi?</div>
+                        <div class="task-card-btns">
+                            <div class="task-card-done task-card-btn fas fa-check-square"></div>
+                            <div class="task-card-edit task-card-btn fas fa-pen-square"></div>
+                            <div class="task-card-remove task-card-btn fas fa-flag"></div>
+                        </div>
+                    </div>
+            </div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-award navbar-icon"></i>
@@ -102,9 +138,10 @@
             // Event Listeners
             $('.navbar-item').bind('click', toggleActive);
             $('.incoming-message-button').bind('click', showMessages);
-            $('.messages-overlay').bind('click', closeMessages);
+            $('.modal-overlay').bind('click', closeMessages);
             $('.messages-close').bind('click', closeMessages);
             $('.message-delete').bind('click',deleteMessage);
+            $('.new-task-btn').bind('click', showNewTaskModal);
         });
 
         // Add navbar-active class on clicked navbar item
@@ -127,16 +164,21 @@
         }
         //show incoming message modal
         function showMessages(e){
-            $('.messages-overlay').css("display","block");
+            $('.modal-overlay').css("display","block");
             $('.incoming-messages').css("display","flex");
         }
         //close incoming message modal
         function closeMessages(e){
-            $('.messages-overlay').css("display", "none");
+            $('.modal-overlay').css("display", "none");
              $('.incoming-messages').css("display", "none");
+             $('.new-task-modal-container').css("display","none");
         }
         function deleteMessage(e){
             $(this).parent().remove();
+        }
+        function showNewTaskModal(e){
+            $('.modal-overlay').css("display","block");
+            $('.new-task-modal-container').css("display","flex");
         }
     </script>
 </body>

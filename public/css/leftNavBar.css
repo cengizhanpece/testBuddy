@@ -45,6 +45,7 @@
 
 .navbar-active .navbar-content{
     font-size:16px;
+    overflow: auto;
     display: flex;
     position: absolute;
     left: 59px;
@@ -77,12 +78,17 @@
     cursor: pointer;
     user-select: none;
 }
-.messages-overlay {
+
+.incoming-message-button:hover{
+    background-color: var(--primary-active-hover-color);
+}
+
+.modal-overlay {
     z-index: 20;
     display: none;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5)
 }
 
@@ -95,7 +101,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fafafa;
+    background-color: var(--primary-card-color);
     flex-direction: column;
     padding-top:10px;
 }
@@ -144,10 +150,10 @@
 }
 
 /* NavBar Homepage */
-
+    
 .left-navbar-username {
     margin-top: 20px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 .left-navbar-last-actions{
@@ -159,22 +165,120 @@
     display:flex;
     flex-direction: row;
     width:100%;
-    margin-top:10px;
+    margin-top:5px;
+    margin-top:40px;
     
 }
 .last-action-header{
- font-size:25px;
- margin-top:40px;
+ font-size:20px;
+ font-weight: bold;
+
 }
 .last-actions-card .fa-check-square{
     font-size:40px;
     padding-right: 10px;
     align-self: center;
 }
-.notifications-text{
+.action-text{
     align-self: center;
 }
 
+/* Gorev List */
+.navbar-content .new-task-btn{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-active-color);
+    font-size: 35px;
+    padding:10px;
+    margin-right:15px;
+    margin-top:15px;
+    user-select: none;
+    cursor:pointer;
+}
+.navbar-content .new-task-btn:hover{
+    background-color: var(--primary-active-hover-color);
+}
+
+.new-task-modal-container{
+    display: none;
+    z-index: 21;
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    max-width: 980px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-card-color);
+    color:white;
+    flex-direction: column;
+    padding-top:10px;
+    align-items: center;
+}
+.new-task-modal-header{
+    position: relative;
+    width: 100%;
+}
+.new-task-modal-title{
+    text-align: center;
+}
+
+.new-task-modal-form-container{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    align-items:center; 
+}
+
+.new-task-modal-form-field{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-task-modal-form-field-input{
+    margin-left: 10px;
+}
+.new-task-modal-form-field-name{
+    font-size: 18px;
+}
+.task-card{
+    background-color: var(--primary-card-color);
+    margin-right:15px;
+    margin-top:20px;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.task-header{
+    font-size:20px;
+    font-weight: bold;
+   }
+.task-text{
+    text-align: center;
+    
+}
+.task-card-btns{
+    width: 100%;
+    display:flex;
+    font-size: 30px;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+.task-card-done{
+    color:var(--primary-active-color);
+}
+.task-card-edit{
+    color:yellowgreen;
+}
+.task-card-remove{
+    color:var(--primary-red-color);
+}
+.task-card-btn{
+    cursor:pointer;
+}
 /* KeyFrames */
 
 @keyframes navbar-animate{
@@ -186,4 +290,3 @@
         opacity: 1;
         transform: translateX(0);
     }
-}
