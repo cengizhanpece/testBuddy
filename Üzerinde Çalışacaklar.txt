@@ -20,6 +20,6 @@ $(function () {
 
 
 
--- Gelen kutusu renkleri yeni görev ekledeki gibi olacak
--- Sayfanın dili ingilzice olacak
+
 -- yeni görev ekle tamamlancak
+-- modal fontları telefonda küçültülecek

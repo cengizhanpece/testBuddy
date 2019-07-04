@@ -9,7 +9,7 @@
 }
 
 html{
-    background-color: var(--left-navbar-bg);
+    background-color:var(--left-navbar-active-bg);
     color:white;
 }
 *{
