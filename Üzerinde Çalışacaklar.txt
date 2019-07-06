@@ -21,5 +21,8 @@ $(function () {
 
 
 
--- yeni görev ekle tamamlancak
 -- modal fontları telefonda küçültülecek
+-- remove-task-confirm modal telefonda widthi arttırılacak
+-- valitade task form
+-- düzenleme düşünülecek
+

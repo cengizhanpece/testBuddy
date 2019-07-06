@@ -53,7 +53,7 @@
     <!-- New Task Modal Start-->
     <div class="new-task-modal-container">
         <div class="new-task-modal-header">
-            <i class="fas fa-times messages-close"></i>
+            <i id="new-task-modal" class="fas fa-times messages-close"></i>
             <h1 class="new-task-modal-title">
                 Create New Task
             </h1>
@@ -62,13 +62,29 @@
             <div class="new-task-modal-form-field">
                 <div class="new-task-modal-form-field-name">Task Name</div>
                 <div class="new-task-modal-form-field-input">
-                    <input type="text" placeholder="Task Name" />
+                    <input type="text" placeholder="Task Name" class="new-task-modal-input" />
                 </div>
+            </div>
+            <div class="new-task-modal-form-field">
+                <div class="new-task-modal-form-field-name">Task Content</div>
+                <div class="new-task-modal-form-field-input">
+                    <input type="text" placeholder="Task Content" class="new-task-modal-input"/>
+                </div>
+            </div>
+            <div class="new-task-modal-form-field">
+                <div class="new-task-modal-form-field-name">Task Target</div>
+                <div class="new-task-modal-form-field-input">
+                    <input type="text" placeholder="Task Target" class="new-task-modal-input" />
+                </div>
+            </div>
+            <div class="new-task-modal-form-confirm-btn new-task-modal-form-field">
+                <button id="create-new-task-btn">Confirm</button>
             </div>
         </div>
         
     </div>
     <!-- New Task Modal End-->
+    
     <!-- ALL MODALS END-->
     <!-- Container Start-->
     <div class="container">
@@ -104,17 +120,35 @@
             </div>
             <div class="navbar-item">
                 <i class="fas fa-check-square navbar-icon"></i>
-                <div class="navbar-content"><div class="fas fa-plus new-task-btn"><div style="font-size:25px;padding-left:15px;">Create Task</div></div>
-                    <div class="task-card">
-                        <div class="task-header">Task Header</div>
-                        <div class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus facere a dolores nemo natus amet, earum numquam quisquam architecto pariatur, at placeat. Dolore ipsam incidunt asperiores cumque? Voluptatum, eveniet commodi?</div>
-                        <div class="task-card-btns">
-                            <div class="task-card-done task-card-btn fas fa-check-square"></div>
-                            <div class="task-card-edit task-card-btn fas fa-pen-square"></div>
-                            <div class="task-card-remove task-card-btn fas fa-flag"></div>
+                <div class="navbar-content">
+                    <!-- CREATE TASK BUTTON-->
+                    <div class="fas fa-plus new-task-btn">
+                        <div style="font-size:25px;padding-left:15px;">
+                            Create Task
                         </div>
                     </div>
-            </div>
+                    <!-- CREATED TASK BUTTONS -->
+                    <div class="navbar-task-card-container">
+                        <div class="task-card">
+                            <div class="task-header">Task Header</div>
+                            <div class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus facere a dolores nemo natus amet, earum numquam quisquam architecto pariatur, at placeat. Dolore ipsam incidunt asperiores cumque? Voluptatum, eveniet commodi?</div>
+                            <div class="task-card-btns">
+                                <div class="task-card-done task-card-btn fas fa-check-square"></div>
+                                <div class="task-card-edit task-card-btn fas fa-pen-square"></div>
+                                <div class="task-card-remove task-card-btn fas fa-flag"></div>
+                            </div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-header">Task Header</div>
+                            <div class="task-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus facere a dolores nemo natus amet, earum numquam quisquam architecto pariatur, at placeat. Dolore ipsam incidunt asperiores cumque? Voluptatum, eveniet commodi?</div>
+                            <div class="task-card-btns">
+                                <div class="task-card-done task-card-btn fas fa-check-square"></div>
+                                <div class="task-card-edit task-card-btn fas fa-pen-square"></div>
+                                <div class="task-card-remove task-card-btn fas fa-flag"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="navbar-item">
                 <i class="fas fa-award navbar-icon"></i>
@@ -135,53 +169,6 @@
     <!-- Container End-->
     <!-- Import JQuery-->
     <script src="jquery.js"></script>
-    <script>
-        $(document).ready(()=>{
-            // Event Listeners
-            $('.navbar-item').bind('click', toggleActive);
-            $('.incoming-message-button').bind('click', showMessages);
-            $('.modal-overlay').bind('click', closeMessages);
-            $('.messages-close').bind('click', closeMessages);
-            $('.message-delete').bind('click',deleteMessage);
-            $('.new-task-btn').bind('click', showNewTaskModal);
-        });
-
-        // Add navbar-active class on clicked navbar item
-        function toggleActive(e){
-            let hasClass = $(this).hasClass('navbar-active');
-            let target = $(e.target);
-            
-            if (!hasClass) {
-                $('.navbar-item').each(function (i) {
-                    $(this).removeClass('navbar-active');
-                })
-                $(this).addClass('navbar-active');
-            }else{
-                //if targer is not a button dont close menu
-                if(target.hasClass('navbar-active')){
-                    $(this).removeClass('navbar-active');
-                }
-                
-            }
-        }
-        //show incoming message modal
-        function showMessages(e){
-            $('.modal-overlay').css("display","block");
-            $('.incoming-messages').css("display","flex");
-        }
-        //close incoming message modal
-        function closeMessages(e){
-            $('.modal-overlay').css("display", "none");
-             $('.incoming-messages').css("display", "none");
-             $('.new-task-modal-container').css("display","none");
-        }
-        function deleteMessage(e){
-            $(this).parent().remove();
-        }
-        function showNewTaskModal(e){
-            $('.modal-overlay').css("display","block");
-            $('.new-task-modal-container').css("display","flex");
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

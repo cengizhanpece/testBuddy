@@ -81,6 +81,7 @@
     background-color: var(--primary-active-color);
     cursor: pointer;
     user-select: none;
+    transition: 0.2s;
 }
 
 .incoming-message-button:hover{
@@ -162,6 +163,7 @@
     right: 20px;
     color:#6E6E6E;
     transform: translate(-50%,-50%);
+    transition: 0.2s;
 }
 .message-delete:hover{
     color:black;
@@ -221,6 +223,7 @@
     margin-top:15px;
     user-select: none;
     cursor:pointer;
+    transition: 0.2s;
 }
 .navbar-content .new-task-btn:hover{
     background-color: var(--primary-active-hover-color);
@@ -230,7 +233,7 @@
     display: none;
     z-index: 21;
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 70%;
     max-width: 980px;
     top: 50%;
@@ -287,8 +290,20 @@
     transition: 0.5s;
     border-bottom: 4px solid var(--left-navbar-bg);
 }
+
+.new-task-modal-form-confirm-btn button{
+    background-color: var(--primary-active-color);
+    font-size: 19px;
+    border: 0px;
+    color:white;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.new-task-modal-form-confirm-btn button:hover{
+    background-color: var(--primary-active-hover-color);
+}
 .new-task-modal-form-field-input input[type="text"]:focus{
-    
     border-bottom: 4px solid var(--primary-active-color);
 }
 
@@ -312,7 +327,6 @@
    }
 .task-text{
     text-align: center;
-    
 }
 .task-card-btns{
     width: 100%;
@@ -332,6 +346,78 @@
 }
 .task-card-btn{
     cursor:pointer;
+}
+
+/*remove task confirm modal*/
+.remove-task-confirm-modal{
+    display: flex;
+    z-index: 21;
+    position: absolute;
+    width: 40%;
+    height: 400px;
+    font-size:20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-card-color);
+    flex-direction: column;
+    align-items: center;
+    padding-top:10px;
+    -webkit-animation-name: modal-animate;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.3s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: modal-animate;
+    animation-duration: 0.3s;
+}
+#triangle-white-back{
+    z-index:-1;
+    top:70px;
+    right:90px;
+    position:absolute;
+    width:20%;
+    height:60%;
+    background-color:white;
+}
+.remove-task-confirm-modal .fa-exclamation-triangle{
+    position: relative;
+    font-size:200px;
+    color:red;
+    padding-top:20px;
+    -webkit-animation-name: flipInY;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.7s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: flipInY;
+    animation-duration: 0.7s;
+}
+
+.remove-task-confirm-modal-text{
+    text-align: center;
+    padding:5px;
+    padding-top:20px;
+    font-size: 1.5rem;
+}
+.task-confirm-modal-btns{
+    display:flex;
+    padding:5px;
+    padding-top:40px;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+}
+.remove-task-btn{
+    cursor:pointer;
+    user-select: none;
+    width:120px;
+    padding:10px 20px;
+}
+.remove-task-confirm-modal-remove-btn{
+    
+    background-color: red;
+}
+.remove-task-confirm-modal-cancel-btn{
+    background-color: var(--primary-active-hover-color);
 }
 /* KeyFrames */
 
@@ -354,5 +440,38 @@
     to{ 
         opacity: 1;
          transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes flipInY {
+    0% {
+        -webkit-transform: perspective(400px) rotateY(90deg);
+        transform: perspective(400px) rotateY(90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotateY(-20deg);
+        transform: perspective(400px) rotateY(-20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in
+    }
+
+    60% {
+        -webkit-transform: perspective(400px) rotateY(10deg);
+        transform: perspective(400px) rotateY(10deg);
+        opacity: 1
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotateY(-5deg);
+        transform: perspective(400px) rotateY(-5deg)
+    }
+
+    to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px)
     }
 }
