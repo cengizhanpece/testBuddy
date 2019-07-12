@@ -89,7 +89,8 @@
         </div>
     </div>
     `;
-
+    clearNewTaskModalInputs();
+     $('.messages-close').click();
     $(".navbar-task-card-container").prepend($(newTask));
     $(`#${id}`).bind('click', showRemoveTaskCard);
  }
